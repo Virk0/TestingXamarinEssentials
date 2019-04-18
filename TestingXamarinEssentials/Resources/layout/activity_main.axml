@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:id="@+id/linearLayout1" >
         <TextView
-            android:text=""
+            android:text="BatteryStatus"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -20,27 +20,58 @@
             android:minHeight="25px"
             android:id="@+id/batterystatus" />
         <TextView
-            android:text=""
+            android:text="BatteryState"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/batterystate" />
         <TextView
-            android:text=""
+            android:text="BatterySource"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/batterysource" />
         <TextView
-            android:text=""
+            android:text="DeviceModel"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/devicemodel" />
+        <TextView
+            android:text="Version"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/androidversion" />
         <Button
             android:text="Vibrate phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/VibrateButton" />
+        <TextView
+            android:text="Flashlight"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2">
+                <Button
+                    android:text="On"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/FlashON" />
+                <Button
+                    android:text="OFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/FlashOFF" />
+        </LinearLayout>
+
     </LinearLayout>
 </RelativeLayout>

@@ -65,9 +65,9 @@ namespace TestingXamarinEssentials
             TextView batteryState = (TextView)FindViewById(Resource.Id.batterystate);
             TextView batterySource = (TextView)FindViewById(Resource.Id.batterysource);
             var levelAdjusted = level * 100;
-            batteryLevel.Append("battery level: " + levelAdjusted + "%");
-            batteryState.Append("battery state: " + state);
-            batterySource.Append("battery source: " + source);
+            batteryLevel.Text = ("Battery Level: " + levelAdjusted + "%");
+            batteryState.Text = ("Battery State: " + state);
+            batterySource.Text = ("Battery Source: " + source);
             #endregion
             #region vibration
             var VibrateBtn = (Button)FindViewById(Resource.Id.VibrateButton);
@@ -95,9 +95,27 @@ namespace TestingXamarinEssentials
 
             // Device Type (Physical)
             var deviceType = DeviceInfo.DeviceType;
-            TextView deviceModel = (TextView)FindViewById(Resource.Id.devicemodel);
-            deviceModel.Append("Device Model: " + deviceModel);
+            TextView deviceModel = FindViewById<TextView>(Resource.Id.devicemodel);
+            deviceModel.Text = ("Device Model: " + device);
+            TextView androidVersion = FindViewById<TextView>(Resource.Id.androidversion);
+            androidVersion.Text = ("Android Version: " + version);
             #endregion
+            #region flashlight  
+            Button FlashLightON = FindViewById<Button>(Resource.Id.FlashON);
+            Button FlashLightOFF = FindViewById<Button>(Resource.Id.FlashOFF);
+            FlashLightON.Click += FlashLightON_ClickAsync;
+            FlashLightOFF.Click += FlashLightOFF_ClickAsync;
+            #endregion
+        }
+
+        private async void FlashLightOFF_ClickAsync(object sender, EventArgs e)
+        {
+            await Flashlight.TurnOffAsync();
+        }
+
+        private async void FlashLightON_ClickAsync(object sender, EventArgs e)
+        {
+            await Flashlight.TurnOnAsync();
         }
 
         private void VibrateBtn_Click(object sender, EventArgs e)
